@@ -1,5 +1,9 @@
 ﻿
+## Questions regarding using a LinkedList over an ArrayList. Does anything change?
+In short, no. The tests pass just as they did when the operations were performed using an ArrayList. Because both of these classes extend the List class, they have to implement the same methods laid out in the List interface. Knowing that, it makes sense why the tests pass no matter what type of List is used.
 
+## What happens if you use `list.remove(Integer.valueOf(77))?`
+When you try to remove all instances of 77 from the List using the List method instead of the Iterator method, an error is thrown. This is because the `List` instantiates the `Iterator` object, which can then iterate over the list using its methods. Additionally, `List.remove()` has to walk down the list each time while the Iterator stays on each object until told to move again. `List` does not understand what `next()` means and therefore throws an error.
 
 SIZE = 10
 REPS = 1000000
